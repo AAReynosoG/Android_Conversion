@@ -8,12 +8,14 @@ public class Celsius extends Grado {
         this.setUnidad("C");
     }
 
-
-    public Celsius Parse(Farenheit F){
-        return new Celsius((F.getValor()-32)/1.8);
+    public Farenheit Parse(Farenheit f){
+        double valor = (getValor() * 9/5) + 32;
+        return new Farenheit(valor);
     }
 
-    public Celsius Parse(Kelvin K){
-        return new Celsius((K.getValor()-273.15));
+    public Kelvin Parse(Kelvin k) {
+        double valor = getValor() + 273.15;
+        return new Kelvin(valor);
     }
+
 }

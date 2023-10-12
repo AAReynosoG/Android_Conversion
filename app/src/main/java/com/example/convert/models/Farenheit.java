@@ -7,8 +7,8 @@ public class Farenheit extends Grado {
         this.setUnidad("F");
     }
 
-    public Farenheit Parse(Celsius c){
-        return new Farenheit(c.getValor());
+    public Celsius Parse(Celsius c){
+        double valor = (getValor());
     }
 
     public Farenheit Parse(Kelvin k){
