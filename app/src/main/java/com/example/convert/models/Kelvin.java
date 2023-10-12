@@ -7,11 +7,13 @@ public class Kelvin extends Grado {
         this.setUnidad("K");
     }
 
-    public Kelvin Parse(Celsius c){
-        return new Kelvin(c.getValor());
+    public Celsius Parse(Celsius c){
+        double valor = (getValor() - 273.15);
+        return new Celsius(valor);
     }
 
-    public Kelvin Parse(Farenheit f){
-        return new Kelvin(f.getValor());
+    public Farenheit Parse(Farenheit f){
+        double valor = (getValor() - 273.15) * 9/5 + 32;
+        return new Farenheit(valor);
     }
 }

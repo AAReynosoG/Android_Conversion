@@ -62,8 +62,39 @@ public class MainActivity extends AppCompatActivity {
 
                 } else if (checkedId == R.id.rb2) {
 
+                    Farenheit farenheit = new Farenheit(valor);
+                    Celsius celsius = farenheit.Parse(new Celsius(valor));
+                    Kelvin kelvin = celsius.Parse(new Kelvin(valor));
+
+                    double valorCelsius = celsius.getValor();
+                    double valorKelvin = kelvin.getValor();
+
+                    Intent i = new Intent(context, MainActivity3.class);
+
+                    Bundle bundle = new Bundle();
+                    bundle.putDouble("valorCelsius", valorCelsius);
+                    bundle.putDouble("valorKelvin", valorKelvin);
+
+                    i.putExtras(bundle);
+                    startActivity(i);
+
                 } else if (checkedId == R.id.rb3) {
 
+                    Kelvin kelvin = new Kelvin(valor);
+                    Celsius celsius = kelvin.Parse(new Celsius(valor));
+                    Farenheit farenheit = kelvin.Parse(new Farenheit(valor));
+
+                    double valorCelsius = celsius.getValor();
+                    double valorFarenheit = farenheit.getValor();
+
+
+                    Intent i =  new Intent(context, MainActivity4.class);
+                    Bundle bundle =  new Bundle();
+                    bundle.putDouble("valorCelsius", valorCelsius);
+                    bundle.putDouble("valorFarenheit", valorFarenheit);
+
+                    i.putExtras(bundle);
+                    startActivity(i);
                 }
             }
         });

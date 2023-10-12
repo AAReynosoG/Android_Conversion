@@ -5,15 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.example.convert.models.Farenheit;
-
-public class MainActivity2 extends AppCompatActivity {
+public class MainActivity4 extends AppCompatActivity {
 
     TextView txtf, txtk;
 
-    Double valorFarenheit, valorKelvin;
-
-
+    Double valorCelsius, valorFarenheit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,14 +18,14 @@ public class MainActivity2 extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
+            valorCelsius = bundle.getDouble("valorCelsius");
             valorFarenheit = bundle.getDouble("valorFarenheit");
-            valorKelvin = bundle.getDouble("valorKelvin");
         }
 
         txtf = findViewById(R.id.txtF);
         txtk = findViewById(R.id.txtK);
 
-        txtf.setText(txtf.getText() + Double.toString(valorFarenheit));
-        txtk.setText(txtk.getText() + Double.toString(valorKelvin));
+        txtf.setText(txtf.getText() + Double.toString(valorCelsius));
+        txtk.setText(txtk.getText() + Double.toString(valorFarenheit));
     }
 }
